@@ -51,7 +51,8 @@ export default () => {
                                 value={initial}
                                 onChange={e => {
                                     e.target.value = !!e.target.value && Math.abs(e.target.value) >= 0 ? Math.abs(e.target.value) : null;
-                                    setInitial(e.target.value)}}
+                                    setInitial(e.target.value)
+                                }}
                             />
                         </div>
                         <div>
@@ -62,7 +63,8 @@ export default () => {
                                 value={years}
                                 onChange={e => {
                                     e.target.value = !!e.target.value && Math.abs(e.target.value) >= 0 ? Math.abs(e.target.value) : null;
-                                    setYears(e.target.value)}}
+                                    setYears(e.target.value)
+                                }}
                             />
                         </div>
                         <div>
@@ -73,7 +75,8 @@ export default () => {
                                 value={rate}
                                 onChange={e => {
                                     e.target.value = !!e.target.value && Math.abs(e.target.value) >= 0 ? Math.abs(e.target.value) : null;
-                                    setRate(e.target.value)}}
+                                    setRate(e.target.value)
+                                }}
                             />
                         </div>
                     </div>
@@ -87,7 +90,8 @@ export default () => {
                                 value={monthlyOverpayment}
                                 onChange={e => {
                                     e.target.value = !!e.target.value && Math.abs(e.target.value) >= 0 ? Math.abs(e.target.value) : null;
-                                    setMonthlyOverpayment(e.target.value)}}
+                                    setMonthlyOverpayment(e.target.value)
+                                }}
                             />
                         </div>
                         <div>
@@ -101,7 +105,7 @@ export default () => {
                                     type="number"
                                     min="0"
                                     max={years}
-                                    value={year}
+                                    value={!!year && Math.abs(year) >= 0 ? Math.abs(parseInt(year)) : null}
                                     name="year"
                                     onChange={updateOverpayment(i)}
                                 />
@@ -109,13 +113,13 @@ export default () => {
                                     type="number"
                                     min="1"
                                     max="12"
-                                    value={month}
+                                    value={!!month && Math.abs(month) >= 0 ? Math.max(1, Math.min(12, Math.abs(parseInt(month)))) : null}
                                     name="month"
                                     onChange={updateOverpayment(i)}
                                 />
                                 <input
                                     type="number"
-                                    value={amount}
+                                    value={!!amount && Math.abs(amount) >= 0 ? Math.abs(amount) : null}
                                     name="amount"
                                     onChange={updateOverpayment(i)}
                                 />
