@@ -140,26 +140,36 @@ export default () => {
         setState({ ...state, checked: true });
     };
 
-    useEffect( () => {
-        speak( {text:"You may double click anywhere on the screen to activate voice mode"} );
-    }, []);
+    const [instruction, setInstruction] = useState(false);
+
+    const speakInstruction = () => {
+        if (!instruction) {
+            speak( {text:"You may double click anywhere on the screen to activate voice mode"} );
+            setInstruction(true);
+        }
+    };
+
+    // useEffect( () => {
+    //     speak( {text:"You may double click anywhere on the screen to activate voice mode"} );
+    // }, []);
 
     return (
-        <div onDoubleClick={handleChangeDoubleClick}>
+        <div onDoubleClick={handleChangeDoubleClick} onClick={speakInstruction}>
             <nav className="navbar navbar-default">
                 <div className="navbar-header">
                     <div className="navbar-brand" style={{fontFamily: 'Arial', fontSize: 25}}>
                         Mortgage Overpayment Calculator
-                    </div>
+                    </div>                        
                 </div>
-                <div>
-                <Switch
-                    checked={state.checked}
-                    onChange={handleChange}
-                    name="checked"
-                />
-                {listening && <div>Go ahead I'm listening</div>}
-                </div>
+                <div className="navbar-right">
+                        <Switch
+                            checked={state.checked}
+                            onChange={handleChange}
+                            name="checked"
+                        />
+                        <label style={{color: 'white'}}>Voice</label>
+                        {listening && <div style={{color: 'white'}}>I'm listening...</div>}
+                </div>               
             </nav>
             <div className="container-fluid">
                     <div className="col-sm-4 col-md-4 col-lg-4">
