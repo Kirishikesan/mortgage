@@ -136,12 +136,16 @@ export default () => {
         setState({ ...state, [event.target.name]: event.target.checked });
     };
 
-    const handleChangeDoubleClick = (event) => {
+    const handleChangeDoubleClick = () => {
         setState({ ...state, checked: true });
     };
 
+    useEffect( () => {
+        speak( {text:"You may double click anywhere on the screen to activate voice mode"} );
+    }, []);
+
     return (
-        <div onDoubleClick={handleChangeDoubleClick} onKeyPress={handleChangeDoubleClick}>
+        <div onDoubleClick={handleChangeDoubleClick}>
             <nav className="navbar navbar-default">
                 <div className="navbar-header">
                     <div className="navbar-brand" style={{fontFamily: 'Arial', fontSize: 25}}>
