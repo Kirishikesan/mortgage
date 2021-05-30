@@ -64,8 +64,7 @@ export default () => {
     const [valueListen, setValueListen] = useState('');
     const { listen, listening, stop } = useSpeechRecognition({
         onResult: (result) => {
-            console.log(result);
-            if (!isNaN(result) ) {
+            if (!isNaN(result.replace(/,/g, '')) ) {
                 setValueListen(result);
             }   
         },
@@ -80,7 +79,7 @@ export default () => {
     // on updating checked state
     useEffect(() => {
         if (state.checked) {
-            setSpeakNumber(speakNumber +1); 
+            setSpeakNumber(speakNumber + 1); 
         }
         if (!state.checked) {
             setSpeakNumber(0); 
