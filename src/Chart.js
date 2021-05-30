@@ -62,8 +62,6 @@ export default ({ payments }) => {
         <path className="line baseline" />
         <path className="line actual" />
       </g>
-      
-
     </svg>
   );
 };
