@@ -170,9 +170,10 @@ export default () => {
                         {listening && <div style={{color: 'white'}}>I'm listening...</div>}
                 </div>               
             </nav>
-            <div className="container-fluid">
-                    <div className="col-sm-4 col-md-4 col-lg-4">
-                            <div className="panel panel-default">
+            <div className="container-fluid component">
+                <div className="col-sm-9 col-md-9 col-lg-9">
+                    <div className="col-sm-6 col-md-6 col-lg-6 component">
+                            <div className="panel panel-primary">
                                 <div className="panel-heading">
                                     <h3>Initial</h3>
                                 </div>    
@@ -278,7 +279,9 @@ export default () => {
 
                             </div>                              
                         
-                            <div className="panel panel-default">
+                    </div>
+                    <div className="col-sm-6 col-md-6 col-lg-6 component">
+                    <div className="panel panel-primary">
                                 <div className="panel-heading" >
                             <h3>Overpayment</h3>
                                  </div>
@@ -377,18 +380,29 @@ export default () => {
                             </div>
                             </div>
 
-                    </div>
                     
-                    <div className="col-sm-5 col-md-5 col-lg-5">
-                        <h3>
-                            Monthly Payment
-                            <span className="money">
-                                {(+monthlyOverpayment + monthlyPayment).toFixed(2)}
-                            </span>
-                        </h3>
-                        <Chart payments={payments}/>
+                    </div>                             
+                    <div className="col-sm-12 col-md-12 col-lg-12 component">
+                        <div className="panel panel-primary">
+                                <div className="panel-heading">
+                                    <h3>
+                                        Years vs Mortgage Balance
+                                    </h3>
+                                </div>
+                                <div className="panel-body"><Chart payments={payments}/></div>
+                                <div className="panel-body"><h4>Monthly Payment
+                                        <span className="money">
+                                            {(+monthlyOverpayment + monthlyPayment).toFixed(2)}
+                                        </span></h4>
+                                </div>
+                 
+                        </div>
                     </div>
-                <Table className="col-sm-3 col-md-3 col-lg-3" payments={payments}/>
+                </div>
+                <div className="col-sm-3 col-md-3 col-lg-3">
+                    <Table  payments={payments}/>
+                </div>
+                
             </div>
         </div>
     );

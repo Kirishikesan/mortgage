@@ -1,10 +1,11 @@
 .navbar {
-  background-color: #428bca;
-  margin-bottom: 10px;
+  background-color: #185992;
+  margin-bottom: 0px;
 }
 
 .navbar .navbar-brand {
   color: #ffffff;
+  padding: 20px;
 }
 
 select,
@@ -90,4 +91,20 @@ h3{
 
 .panel-body{
   padding: 5px 10px;
+}
+
+.component{
+  padding:0px;
+}
+
+.panel-heading{
+  padding-top: 15px;
+}
+
+.container-fluid{
+  padding-top: 15px;
+}
+
+.navbar-right{
+  padding:10px;
 }
