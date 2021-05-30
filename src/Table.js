@@ -21,7 +21,11 @@ export default ({ payments, className }) => {
     );
 
   return (
-    <table className={className}>
+    
+    <div className="panel panel-primary">
+      <div className="panel-heading"><h3>Cashflow Graph</h3></div>
+      <div className="panel-body">
+      <table className={className}>
       <thead>
         <tr>
           <th>Years</th>
@@ -49,5 +53,8 @@ export default ({ payments, className }) => {
         </tr>
       </tfoot>
     </table>
+    
+      </div>
+    </div>  
   );
 };

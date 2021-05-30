@@ -1,5 +1,5 @@
 .navbar {
-  background-color: #428bca;
+  background-color: #185992;
   margin-bottom: 10px;
 }
 
@@ -90,4 +90,8 @@ h3{
 
 .panel-body{
   padding: 5px 10px;
+}
+
+.component{
+  padding:0px;
 }
